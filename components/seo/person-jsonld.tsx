@@ -63,10 +63,16 @@ export function PersonJsonLd() {
       "@type": "CreativeWork",
       name: p.name,
       description: p.tagline,
-      url: p.live,
-      codeRepository: p.github,
+      url: `${siteUrl}/projects/${p.id}`,
+      sameAs: [p.github, p.live],
       keywords: p.stack.join(", "),
     })),
+    significantLink: [
+      `${siteUrl}/projects/smartnotes`,
+      `${siteUrl}/projects/utility-suite`,
+      siteConfig.github,
+      siteConfig.linkedin,
+    ],
   };
   return (
     <script

@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, FileText, MapPin, ArrowUpRight } from "lucide-react";
+import { FileText, Github, Linkedin, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks, siteConfig } from "@/lib/data";
 
@@ -57,17 +57,11 @@ export function Contact() {
               <span>From {siteConfig.location.origin}</span>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8">
               <Button asChild size="lg" variant="gradient">
                 <a href={`mailto:${siteConfig.email}`}>
                   <Mail className="size-4" />
                   {siteConfig.email}
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href={siteConfig.resumeUrl} download="Abhijeet-Kumar-Resume.pdf">
-                  <FileText className="size-4" />
-                  Download Resume
                 </a>
               </Button>
             </div>

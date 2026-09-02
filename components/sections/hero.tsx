@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SmoothLink } from "@/components/smooth-link";
 import { heroStats, siteConfig } from "@/lib/data";
 
 export function Hero() {
@@ -79,10 +80,10 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" variant="gradient">
-                <a href="#projects">
+                <SmoothLink href="projects">
                   View Projects
                   <ArrowRight className="size-4" />
-                </a>
+                </SmoothLink>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <a href={siteConfig.resumeUrl} download="Abhijeet-Kumar-Resume.pdf">
