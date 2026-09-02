@@ -25,7 +25,7 @@ No environment variables are required. The site URL is hardcoded in `lib/data.ts
 app/
   layout.tsx            Root layout, fonts, metadata, JSON-LD
   page.tsx              Home (all sections)
-  resume/page.tsx       Resume viewer + download
+  projects/[slug]/      Case study pages (smartnotes, utility-suite)
   sitemap.ts            sitemap.xml
   robots.ts             robots.txt
   llms.txt/route.ts     LLM-readable short profile
@@ -47,7 +47,7 @@ lib/
 public/
   profile.webp          Optimized portrait
   profile.png           Source portrait
-  resume.pdf            Resume for in-browser viewing
+  resume.pdf            Resume (opens directly in default browser)
   agents.txt            Agentic browsing manifest
   humans.txt            Credits
 ```

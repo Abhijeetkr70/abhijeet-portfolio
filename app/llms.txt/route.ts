@@ -44,7 +44,7 @@ ${faqs.map((f) => `Q: ${f.q}\nA: ${f.a}`).join("\n\n")}
 
 ## Site
 - URL: ${siteUrl}
-- Resume: ${siteUrl}/resume
+- Resume: ${siteUrl}/resume.pdf
 - Built with Next.js, Tailwind CSS, shadcn/ui.
 `;
   return new Response(body, {

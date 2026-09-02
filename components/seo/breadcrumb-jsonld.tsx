@@ -6,7 +6,7 @@ export function BreadcrumbJsonLd() {
     { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
     { "@type": "ListItem", position: 2, name: "Projects", item: `${siteUrl}/projects` },
     { "@type": "ListItem", position: 3, name: "Experience", item: `${siteUrl}/experience` },
-    { "@type": "ListItem", position: 4, name: "Resume", item: `${siteUrl}/resume` },
+    { "@type": "ListItem", position: 4, name: "Resume", item: `${siteUrl}/resume.pdf` },
   ];
   const projectItems = projects.map((p, i) => ({
     "@type": "ListItem",

@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { "en-US": siteUrl } },
     },
     {
-      url: `${siteUrl}/resume`,
+      url: `${siteUrl}/resume.pdf`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,

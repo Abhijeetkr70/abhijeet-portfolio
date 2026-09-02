@@ -424,7 +424,7 @@ export const socialLinks = [
   {
     id: "resume",
     label: "Resume",
-    url: "/resume",
+    url: "/resume.pdf",
     handle: "View PDF",
   },
 ] as const;

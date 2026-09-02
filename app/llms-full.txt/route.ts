@@ -66,7 +66,7 @@ ${faqs.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 - Email: ${siteConfig.email}
 - LinkedIn: ${siteConfig.linkedin}
 - GitHub: ${siteConfig.github}
-- Resume: ${siteUrl}/resume
+- Resume: ${siteUrl}/resume.pdf
 
 ## Meta
 - Site URL: ${siteUrl}

@@ -64,7 +64,7 @@ export function Nav() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-            <a href="/resume" target="_blank" rel="noopener">
+            <a href="/resume.pdf" target="_blank" rel="noopener">
               <FileText className="size-4" />
               Resume
             </a>
@@ -121,7 +121,7 @@ export function Nav() {
                     variant="outline"
                     className="w-full border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
                   >
-                    <a href="/resume" target="_blank" rel="noopener">
+                    <a href="/resume.pdf" target="_blank" rel="noopener">
                       <FileText className="size-4" />
                       Resume
                     </a>
