@@ -2,7 +2,7 @@
 
 Production-grade personal portfolio for Abhijeet Kumar, Full-Stack Developer | AI Integration.
 
-- **Live:** [abhijeet-portfolio.vercel.app](https://abhijeet-portfolio.vercel.app)
+- **Live:** [abhijeet-kr.vercel.app](https://abhijeet-kr.vercel.app)
 - **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · shadcn/ui · Framer Motion
 - **Deployment:** Vercel
 

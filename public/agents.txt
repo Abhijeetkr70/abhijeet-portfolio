@@ -14,7 +14,7 @@ CONTACT:
 
 SITE:
   name: Abhijeet Kumar — Full-Stack Developer | AI Integration
-  url: https://abhijeet-portfolio.vercel.app
+  url: https://abhijeet-kr.vercel.app
   type: personal_portfolio
   language: en-US
   theme: dark

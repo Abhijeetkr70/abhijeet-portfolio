@@ -85,7 +85,7 @@ export default async function OG() {
           }}
         >
           <span>Jaipur, Rajasthan · From Saran, Bihar</span>
-          <span>abhijeet-portfolio.vercel.app</span>
+          <span>abhijeet-kr.vercel.app</span>
         </div>
       </div>
     ),

@@ -1,6 +1,6 @@
 /* TEAM */
 Author: Abhijeet Kumar
-Site: https://abhijeet-portfolio.vercel.app
+Site: https://abhijeet-kr.vercel.app
 Contact: kumarabhijeet7095@gmail.com
 Location: Jaipur, Rajasthan, India
 

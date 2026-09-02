@@ -1,6 +1,6 @@
 import { siteConfig, projects, experiences, skillGroups, faqs } from "@/lib/data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-portfolio.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-kr.vercel.app";
 
 export const dynamic = "force-static";
 

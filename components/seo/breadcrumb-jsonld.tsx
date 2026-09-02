@@ -1,5 +1,5 @@
 export function BreadcrumbJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-portfolio.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-kr.vercel.app";
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
