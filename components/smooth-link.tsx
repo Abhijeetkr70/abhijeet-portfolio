@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 type SmoothLinkProps = {
@@ -12,10 +12,10 @@ type SmoothLinkProps = {
 };
 
 /**
- * Hybrid navigation:
- *  - On the home page: scrolls smoothly to the section id, URL stays clean (/).
- *  - On any other page: navigates to the corresponding /<id> route.
- * No `#` fragments are ever written to the URL.
+ * Section-route navigation. Always navigates to the given path using Next
+ * router (instant client-side transition, no full reload). Falls back to
+ * native anchor navigation if the click was modified (cmd/ctrl/shift/middle-click)
+ * so recruiters can open a section in a new tab normally.
  */
 export function SmoothLink({
   href,
@@ -24,30 +24,36 @@ export function SmoothLink({
   onClick,
 }: SmoothLinkProps) {
   const router = useRouter();
-  const pathname = usePathname();
+
+  // Normalize href: accept "about", "/about", "#about", "/".
+  const normalized = href.startsWith("#")
+    ? href.slice(1)
+    : href.startsWith("/")
+      ? href
+      : `/${href}`;
+  const targetHref = normalized === "" ? "/" : normalized;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
     onClick?.();
 
-    const id = href.startsWith("#") ? href.slice(1) : href;
-    if (!id) return;
-
-    // On home, try to scroll to the in-page section.
-    if (pathname === "/") {
-      const target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
-      }
+    // Let the browser handle modified clicks (new tab, new window, etc.)
+    if (
+      e.defaultPrevented ||
+      e.button !== 0 ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey
+    ) {
+      return;
     }
 
-    // Off home (or home without a matching id) — go to the route.
-    router.push(`/${id}`);
+    e.preventDefault();
+    router.push(targetHref);
   };
 
   return (
-    <a href={`/${href.startsWith("#") ? href.slice(1) : href}`} className={cn(className)} onClick={handleClick}>
+    <a href={targetHref} className={cn(className)} onClick={handleClick}>
       {children}
     </a>
   );
