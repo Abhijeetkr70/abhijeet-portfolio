@@ -1,0 +1,22 @@
+/* TEAM */
+Author: Abhijeet Kumar
+Site: https://abhijeet-portfolio.vercel.app
+Contact: kumarabhijeet7095@gmail.com
+Location: Jaipur, Rajasthan, India
+
+/* SITE */
+Last update: 2026-09-02
+Standards: HTML5, CSS3, ES2022
+Components: Next.js 14 (App Router), React 18, TypeScript
+Styling: Tailwind CSS, shadcn/ui (Radix UI primitives)
+Animations: Framer Motion
+Icons: lucide-react
+Deployment: Vercel
+Fonts: Inter, JetBrains Mono (Google Fonts via next/font)
+
+/* THANKS */
+- Next.js team
+- shadcn (shadcn-ui) for the design system
+- Vercel for hosting
+- Jagannath University, Jaipur
+- YHills and ApexPlanet Software for the internship experience

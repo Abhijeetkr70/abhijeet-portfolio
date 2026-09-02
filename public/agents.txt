@@ -1,0 +1,72 @@
+# Agentic Browsing Manifest — Abhijeet Kumar Portfolio
+# This file is read by autonomous browsing agents and crawlers
+# to extract structured information about the site and its owner.
+
+USER-AGENT: *
+ALLOW: /
+DISALLOW: /api/
+
+CONTACT:
+  name: Abhijeet Kumar
+  email: kumarabhijeet7095@gmail.com
+  linkedin: https://linkedin.com/in/abhijeetkr62
+  github: https://github.com/Abhijeetkr70
+
+SITE:
+  name: Abhijeet Kumar — Full-Stack Developer | AI Integration
+  url: https://abhijeet-portfolio.vercel.app
+  type: personal_portfolio
+  language: en-US
+  theme: dark
+  last-updated: 2026-09-02
+
+OWNER:
+  role: Full-Stack Developer | AI Integration
+  status: open_to_opportunities
+  location: Jaipur, Rajasthan, India
+  origin: Saran, Bihar, India
+
+EDUCATION:
+  - institution: Jagannath University, Jaipur
+    url: https://www.jagannathuniversity.org/
+    degree: B.Tech Computer Science & Engineering
+    cgpa: 7.0
+    duration: 2023-07 to 2027-07 (expected)
+    coursework: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, OOP
+
+EXPERIENCE:
+  - role: Web Development Intern
+    company: ApexPlanet Software Pvt. Ltd.
+    mode: remote
+    duration: 2025-12 to 2026-01
+    certificate: https://drive.google.com/file/d/1Ne9LDeB5cfEuHwFzHyObU2mBAL-mhnkI/view
+  - role: Full-Stack Web Development Intern
+    company: YHills
+    mode: remote
+    duration: 2024-03 to 2024-06
+    certificate: https://drive.google.com/file/d/1U9b4vxyVhIAmT1kNOtsPT4kJWgu4twgD/view
+
+PROJECTS:
+  - name: SmartNotes Application
+    url: https://smartnotes-application.vercel.app/
+    repo: https://github.com/Abhijeetkr70/SmartNotes-Application
+    stack: React 18, Vite, Tailwind CSS, Node.js, Express.js, MongoDB, Mongoose, Clerk, Zod
+  - name: Frontend Utility Suite
+    url: https://frontend-utility-suite.vercel.app/
+    repo: https://github.com/Abhijeetkr70/Frontend_Utility_Suite
+    stack: JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, OpenWeatherMap API, localStorage
+
+STACK:
+  languages: JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL
+  frontend: React.js, Redux Toolkit, Context API, Next.js, Tailwind CSS, shadcn/ui, Material UI, Framer Motion, Vite
+  backend: Node.js, Express.js, REST APIs, JWT, bcrypt, Multer, Nodemailer, Mongoose, Zod
+  database_and_tools: MongoDB, MongoDB Atlas, PostgreSQL, Cloudinary, Git, GitHub, Docker, GitHub Actions, Vercel, Render, Postman
+  ai: OpenAI API, Claude API, Prompt Engineering, LLM Workflows, Embeddings, Vector Search, RAG (basics)
+
+RESOURCES:
+  resume: /resume.pdf
+  llms: /llms.txt
+  llms_full: /llms-full.txt
+  sitemap: /sitemap.xml
+  humans: /humans.txt
+  robots: /robots.txt
