@@ -1,7 +1,8 @@
 import { projects } from "@/lib/data";
+import { siteConfig } from "@/lib/data";
 
 export function ProjectsJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-kr.vercel.app";
+  const siteUrl = siteConfig.url;
   const data = {
     "@context": "https://schema.org",
     "@type": "ItemList",

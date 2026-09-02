@@ -24,7 +24,7 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-kr.vercel.app";
+const siteUrl = siteConfig.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

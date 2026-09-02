@@ -1,7 +1,7 @@
 import { siteConfig, projects } from "@/lib/data";
 
 export function PersonJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://abhijeet-kr.vercel.app";
+  const siteUrl = siteConfig.url;
   const data = {
     "@context": "https://schema.org",
     "@type": "Person",

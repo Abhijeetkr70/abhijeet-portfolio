@@ -19,10 +19,9 @@ npm run typecheck
 
 ## Environment Variables (optional)
 
-Create `.env.local` to override defaults (the site works without them):
+Create `.env.local` to add search-engine verification codes. The site URL is hardcoded in `lib/data.ts` (`siteConfig.url`).
 
 ```
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_GSC_VERIFICATION=your-google-site-verification
 NEXT_PUBLIC_BING_VERIFICATION=your-bing-site-verification
 ```

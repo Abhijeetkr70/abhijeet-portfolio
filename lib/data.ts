@@ -3,6 +3,7 @@ export const siteConfig = {
   initials: "AK",
   role: "Full-Stack Developer | AI Integration",
   tagline: "Building production-grade web apps with MERN stack & AI.",
+  url: "https://abhijeet-kr.vercel.app",
   email: "kumarabhijeet7095@gmail.com",
   linkedin: "https://linkedin.com/in/abhijeetkr62",
   github: "https://github.com/Abhijeetkr70",
