@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import {
   ArrowRight,
-  Download,
+  FileText,
   Github,
   Linkedin,
   Mail,
@@ -86,9 +86,13 @@ export function Hero() {
                 </SmoothLink>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href={siteConfig.resumeUrl} download="Abhijeet-Kumar-Resume.pdf">
-                  <Download className="size-4" />
-                  Download Resume
+                <a
+                  href={siteConfig.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FileText className="size-4" />
+                  View Resume
                 </a>
               </Button>
               <Button asChild size="lg" variant="ghost">
