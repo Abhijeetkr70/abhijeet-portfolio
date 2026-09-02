@@ -12,9 +12,10 @@ type SmoothLinkProps = {
 };
 
 /**
- * Anchor that scrolls smoothly to a section id without putting a `#fragment`
- * in the URL bar. If the target id is not on the current page, navigates
- * to `/?scroll=<id>` and the home page scrolls on mount.
+ * Hybrid navigation:
+ *  - On the home page: scrolls smoothly to the section id, URL stays clean (/).
+ *  - On any other page: navigates to the corresponding /<id> route.
+ * No `#` fragments are ever written to the URL.
  */
 export function SmoothLink({
   href,
@@ -30,25 +31,23 @@ export function SmoothLink({
     onClick?.();
 
     const id = href.startsWith("#") ? href.slice(1) : href;
-    const target = document.getElementById(id);
+    if (!id) return;
 
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-
+    // On home, try to scroll to the in-page section.
     if (pathname === "/") {
-      // home but no target found — fallback to top
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
     }
 
-    // navigate to home with scroll query
-    router.push(`/?scroll=${id}`);
+    // Off home (or home without a matching id) — go to the route.
+    router.push(`/${id}`);
   };
 
   return (
-    <a href={href} className={cn(className)} onClick={handleClick}>
+    <a href={`/${href.startsWith("#") ? href.slice(1) : href}`} className={cn(className)} onClick={handleClick}>
       {children}
     </a>
   );

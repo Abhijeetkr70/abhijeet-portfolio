@@ -55,7 +55,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
       <main id="main" className="pt-24 sm:pt-28 pb-16 sm:pb-24">
         <article className="container max-w-4xl">
           <Link
-            href="/?scroll=projects"
+            href="/projects"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
           >
             <ArrowLeft className="size-4" />
@@ -189,7 +189,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
 
           <div className="mt-16 grid gap-4 sm:grid-cols-2">
             <Link
-              href="/?scroll=contact"
+              href="/contact"
               className="group flex items-center justify-between rounded-xl border border-border bg-card/60 p-5 hover:border-primary/40 transition-colors"
             >
               <div>

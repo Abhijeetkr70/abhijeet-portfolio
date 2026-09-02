@@ -5,6 +5,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { featuredStack, skillGroups } from "@/lib/data";
 
+const shortLabels: Record<string, string> = {
+  ai: "AI",
+  languages: "Lang",
+  frontend: "FE",
+  backend: "BE",
+  database: "Data",
+};
+
 export function Skills() {
   return (
     <section
@@ -60,20 +68,25 @@ export function Skills() {
           </div>
         </div>
 
-        {/* Tabbed groups */}
+        {/* Tabbed groups — responsive grid (no horizontal scroll) */}
         <Tabs defaultValue={skillGroups[0].id} className="mt-8 sm:mt-10">
-          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 scrollbar-hide">
-            <TabsList>
-              {skillGroups.map((g) => (
-                <TabsTrigger key={g.id} value={g.id} className="gap-1.5">
-                  <span>{g.label}</span>
-                  <span className="text-[10px] text-muted-foreground font-normal">
-                    {g.skills.length}
-                  </span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
+          <TabsList className="grid grid-cols-3 sm:grid-cols-5 w-full h-auto p-1 bg-muted/50 gap-1 overflow-visible">
+            {skillGroups.map((g) => (
+              <TabsTrigger
+                key={g.id}
+                value={g.id}
+                className="flex flex-col sm:flex-row items-center justify-center gap-0 sm:gap-1.5 px-2 sm:px-3 py-2 sm:py-1.5 text-[11px] sm:text-sm font-medium data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-border min-h-[44px] sm:min-h-[36px]"
+              >
+                <span className="sm:hidden font-semibold">
+                  {shortLabels[g.id] ?? g.label}
+                </span>
+                <span className="hidden sm:inline">{g.label}</span>
+                <span className="text-[9px] sm:text-[10px] text-muted-foreground font-normal">
+                  {g.skills.length}
+                </span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
 
           {skillGroups.map((g) => (
             <TabsContent key={g.id} value={g.id} className="mt-4 sm:mt-6">
