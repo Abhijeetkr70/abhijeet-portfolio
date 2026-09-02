@@ -39,10 +39,23 @@ export const heroStats = [
   { value: "MERN+AI", label: "Core Stack" },
 ] as const;
 
+export const featuredStack = [
+  "React 18",
+  "Next.js 14",
+  "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
+  "MongoDB",
+  "OpenAI API",
+] as const;
+
 export const navItems = [
-  { label: "Projects", href: "projects" },
-  { label: "Experience", href: "experience" },
   { label: "About", href: "about" },
+  { label: "Skills", href: "skills" },
+  { label: "Experience", href: "experience" },
+  { label: "Projects", href: "projects" },
+  { label: "Education", href: "education" },
+  { label: "FAQ", href: "faq" },
   { label: "Contact", href: "contact" },
 ] as const;
 
@@ -54,6 +67,7 @@ export const aboutParagraphs = [
 export type SkillGroup = {
   id: string;
   label: string;
+  description: string;
   skills: string[];
 };
 
@@ -61,6 +75,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "ai",
     label: "AI Integration",
+    description: "LLM-powered product work — the differentiator.",
     skills: [
       "OpenAI API",
       "Claude API",
@@ -74,11 +89,13 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "languages",
     label: "Languages",
+    description: "The typed & untyped foundations I write every day.",
     skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL"],
   },
   {
     id: "frontend",
     label: "Frontend",
+    description: "UI frameworks, design systems, and motion.",
     skills: [
       "React.js",
       "Redux Toolkit",
@@ -94,6 +111,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "backend",
     label: "Backend",
+    description: "APIs, auth, validation, and server plumbing.",
     skills: [
       "Node.js",
       "Express.js",
@@ -109,6 +127,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "database",
     label: "Database & Tools",
+    description: "Storage, infra, and the day-to-day toolbox.",
     skills: [
       "MongoDB",
       "MongoDB Atlas",
@@ -121,19 +140,6 @@ export const skillGroups: SkillGroup[] = [
       "Vercel",
       "Render",
       "Postman",
-    ],
-  },
-  {
-    id: "ai",
-    label: "AI Integration",
-    skills: [
-      "OpenAI API",
-      "Claude API",
-      "Prompt Engineering",
-      "LLM Workflows",
-      "Embeddings",
-      "Vector Search",
-      "RAG (basics)",
     ],
   },
 ];

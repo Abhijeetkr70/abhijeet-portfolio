@@ -44,17 +44,20 @@ export function Nav() {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20">
             {siteConfig.initials}
           </span>
+          <span className="sm:hidden font-semibold tracking-tight text-foreground text-sm">
+            Abhijeet
+          </span>
           <span className="hidden sm:inline-block font-semibold tracking-tight text-foreground">
             {siteConfig.name}
           </span>
         </a>
 
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <li key={item.href}>
               <SmoothLink
                 href={item.href}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                className="px-2.5 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-colors"
               >
                 {item.label}
               </SmoothLink>
@@ -89,7 +92,7 @@ export function Nav() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[220px] max-w-[220px] bg-black border-l border-white/10 p-5 text-white [&>button]:text-white [&>button]:opacity-80 [&>button:hover]:opacity-100"
+              className="w-[260px] max-w-[260px] bg-black border-l border-white/10 p-5 text-white [&>button]:text-white [&>button]:opacity-80 [&>button:hover]:opacity-100"
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-6">
@@ -97,18 +100,19 @@ export function Nav() {
                     {siteConfig.initials}
                   </span>
                   <span className="font-semibold tracking-tight text-sm text-white">
-                    {siteConfig.name}
+                    Abhijeet
                   </span>
                 </div>
-                <ul className="flex flex-col gap-0.5">
+                <ul className="flex flex-col gap-0.5 -mx-1">
                   {navItems.map((item) => (
                     <li key={item.href}>
                       <SheetClose asChild>
                         <SmoothLink
                           href={item.href}
-                          className="block px-2.5 py-2.5 text-sm font-medium text-white/85 hover:text-white rounded-md hover:bg-white/10 transition-colors"
+                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-white/85 hover:text-white rounded-md hover:bg-white/10 transition-colors"
                         >
-                          {item.label}
+                          <span>{item.label}</span>
+                          <span className="text-white/30 group-hover:text-white/60">→</span>
                         </SmoothLink>
                       </SheetClose>
                     </li>
