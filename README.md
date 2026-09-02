@@ -17,14 +17,7 @@ npm run lint
 npm run typecheck
 ```
 
-## Environment Variables (optional)
-
-Create `.env.local` to add search-engine verification codes. The site URL is hardcoded in `lib/data.ts` (`siteConfig.url`).
-
-```
-NEXT_PUBLIC_GSC_VERIFICATION=your-google-site-verification
-NEXT_PUBLIC_BING_VERIFICATION=your-bing-site-verification
-```
+No environment variables are required. The site URL is hardcoded in `lib/data.ts` (`siteConfig.url`).
 
 ## Project Structure
 
@@ -43,7 +36,7 @@ app/
 components/
   nav.tsx               Sticky header + mobile sheet
   back-to-top.tsx
-  ui/                   shadcn primitives
+  ui/                   shadcn primitives (button, badge, sheet, tabs, accordion, tooltip)
   sections/             Hero, About, Skills, Experience, Projects, Education, Achievements, FAQ, Contact, Footer
   seo/                  JSON-LD components
 
@@ -65,7 +58,6 @@ public/
 - `llms.txt` + `llms-full.txt` for LLM/AI ingestion.
 - `agents.txt` for agentic browsers.
 - `sitemap.xml`, `robots.txt`, `humans.txt`.
-- Google Search Console + Bing Webmaster verification slots in env vars.
 - Open Graph + Twitter card with dynamic image.
 
 ## Recruiter Notes
