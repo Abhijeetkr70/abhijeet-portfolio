@@ -30,6 +30,7 @@ export function Contact() {
     try {
       await navigator.clipboard.writeText(siteConfig.email);
       setCopied(true);
+      window.trackTelegramEvent?.("Contact: Copied Email Address");
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // fallback: no-op
@@ -115,6 +116,9 @@ export function Contact() {
                 <a
                   href={`mailto:${siteConfig.email}`}
                   className="min-w-0"
+                  onClick={() =>
+                    window.trackTelegramEvent?.("Contact: Email Link Clicked")
+                  }
                 >
                   <Mail className="size-4 shrink-0" />
                   <span className="truncate">{siteConfig.email}</span>

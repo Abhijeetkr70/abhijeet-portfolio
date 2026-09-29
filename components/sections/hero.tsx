@@ -90,13 +90,21 @@ export function Hero() {
                   href={siteConfig.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    window.trackTelegramEvent?.("Hero: View Resume Clicked")
+                  }
                 >
                   <FileText className="size-4" />
                   View Resume
                 </a>
               </Button>
               <Button asChild size="lg" variant="ghost">
-                <a href={`mailto:${siteConfig.email}`}>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  onClick={() =>
+                    window.trackTelegramEvent?.("Hero: Direct Email Clicked")
+                  }
+                >
                   <Mail className="size-4" />
                   Email
                 </a>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { TelegramTracker } from "@/components/analytics/telegram-tracker";
 import { siteConfig } from "@/lib/data";
 
 const inter = Inter({
@@ -110,8 +111,12 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
-        <TooltipProvider delayDuration={150}>{children}</TooltipProvider>
+        <TooltipProvider delayDuration={150}>
+          <TelegramTracker />
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );
 }
+

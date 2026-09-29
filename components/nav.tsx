@@ -67,13 +67,21 @@ export function Nav() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-            <a href="/resume.pdf" target="_blank" rel="noopener">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener"
+              onClick={() => window.trackTelegramEvent?.("Navbar: Resume Clicked")}
+            >
               <FileText className="size-4" />
               Resume
             </a>
           </Button>
           <Button asChild size="sm" variant="gradient" className="hidden sm:inline-flex">
-            <SmoothLink href="contact">
+            <SmoothLink
+              href="contact"
+              onClick={() => window.trackTelegramEvent?.("Navbar: Hire Me Clicked")}
+            >
               <Mail className="size-4" />
               Hire Me
             </SmoothLink>
