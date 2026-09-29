@@ -36,14 +36,17 @@ export function TelegramTracker() {
   }, []);
 
   useEffect(() => {
-    if (!pathname || pathname === lastTrackedPath.current) return;
+    if (!pathname) return;
 
-    // Session-based deduplication to avoid spamming on F5 refresh
+    // 10-minute cooldown per page to prevent spamming on rapid F5 reloads,
+    // while ensuring every new visitor or returning visitor is tracked.
     const sessionKey = `tg_track_${pathname}`;
-    const alreadyTrackedInSession = sessionStorage.getItem(sessionKey);
+    const lastTrackTime = sessionStorage.getItem(sessionKey);
+    const now = Date.now();
+    const COOLDOWN_MS = 10 * 60 * 1000; // 10 minutes
 
-    if (!alreadyTrackedInSession) {
-      sessionStorage.setItem(sessionKey, "1");
+    if (!lastTrackTime || now - Number(lastTrackTime) > COOLDOWN_MS) {
+      sessionStorage.setItem(sessionKey, String(now));
       lastTrackedPath.current = pathname;
 
       try {
