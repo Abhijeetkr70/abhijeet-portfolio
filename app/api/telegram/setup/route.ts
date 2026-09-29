@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getBotToken } from "@/lib/telegram";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const token = process.env.BOT_TOKEN;
+  const token = getBotToken();
   if (!token) {
     return NextResponse.json(
-      { error: "BOT_TOKEN environment variable is missing" },
+      { error: "BOT_TOKEN is missing" },
       { status: 500 }
     );
   }

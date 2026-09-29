@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getBot } from "@/bot/index";
+import { getBotToken } from "@/lib/telegram";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const hasToken = Boolean(process.env.BOT_TOKEN);
+  const hasToken = Boolean(getBotToken());
 
   return NextResponse.json({
     status: "active",

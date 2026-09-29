@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendVisitorAlert } from "@/lib/telegram";
+import { sendVisitorAlert, getBotToken, getTelegramChatId } from "@/lib/telegram";
 
 const BOT_PATTERNS = [
   /googlebot/i,
@@ -86,17 +86,15 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   // Test endpoint to check tracking configuration
-  const hasToken = Boolean(process.env.BOT_TOKEN);
-  const hasChatId = Boolean(process.env.TELEGRAM_CHAT_ID);
+  const hasToken = Boolean(getBotToken());
+  const hasChatId = Boolean(getTelegramChatId());
 
   return NextResponse.json({
     status: "online",
     botConfigured: hasToken,
     chatIdConfigured: hasChatId,
     timestamp: new Date().toISOString(),
-    tip: !hasChatId
-      ? "Set TELEGRAM_CHAT_ID in .env.local to receive notifications"
-      : "Telegram tracker is ready and active",
+    tip: "Telegram tracker is active for all devices and visitors",
   });
 }
 

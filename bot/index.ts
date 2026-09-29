@@ -5,6 +5,7 @@ import { setupContactHandler } from './handlers/contact'
 import { setupSkillsHandler } from './handlers/skills'
 import { setupAboutHandler } from './handlers/about'
 import { mainMenuKeyboard } from './keyboards/mainMenu'
+import { getBotToken } from '@/lib/telegram'
 
 let botInstance: Telegraf | null = null
 
@@ -13,9 +14,9 @@ export function getBot(): Telegraf {
     return botInstance
   }
 
-  const token = process.env.BOT_TOKEN
+  const token = getBotToken()
   if (!token) {
-    throw new Error('BOT_TOKEN environment variable is missing')
+    throw new Error('BOT_TOKEN is missing')
   }
 
   const bot = new Telegraf(token)
